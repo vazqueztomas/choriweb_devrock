@@ -1,0 +1,30 @@
+{
+    "msg1": {
+        "orden": 1,
+        "mensaje": "pepeloco 111",
+        "autor": "toto"
+    },
+
+    "msg2": {
+        "orden": 2,
+        "mensaje": "pepeloco 222",
+        "autor": "toto"
+    },
+
+    "msg3": {
+        "orden": 3,
+        "mensaje": "pepeloco 3333",
+        "autor": "toto"
+    },
+
+    "msg4": {
+        "orden": 4,
+        "mensaje": "pepeloco 444",
+        "autor": "toto"
+    },
+    "msg5": {
+        "orden": 5,
+        "mensaje": "pepeloco 555 ",
+        "autor": "toto"
+    }
+}

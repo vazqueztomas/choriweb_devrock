@@ -1,0 +1,15 @@
+{
+  "name": "firebase",
+  "version": "1.0.0",
+  "description": "Choriweb te amo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "firebase",
+    "choriweb"
+  ],
+  "author": "tomasvazquez",
+  "license": "ISC"
+}
