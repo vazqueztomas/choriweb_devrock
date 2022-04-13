@@ -67,3 +67,11 @@ img {
     cursor: pointer;
 }
 
+.iniciarSesion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.emailAndPassword{display: none;}
