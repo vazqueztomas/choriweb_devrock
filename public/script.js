@@ -89,28 +89,31 @@ const btnCrearCuenta = d
     createUser();
   });
 
+const formularioLogin = d.getElementById('emailAndPassword')
 const logWithUserBtn = d
   .getElementById("login-w-user")
   .addEventListener("click", () => {
-    let formularioLogin = d.getElementById('emailAndPassword').style.display = 'block'
+    formularioLogin.style.display = 'block'
   });
 
 const createUser = () => {
-  let password = d.getElementById("userPass").value;
-  let email = d.getElementsByTagName("userEmail").value;
+  const password = d.getElementById("userPass").value;
+  const email = d.getElementById("userEmail").value;
 
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
       console.log("logueado", user);
+      nombreUsuario.value = user;
+      formularioLogin.style.display = 'none';
       // ...
     })
     .catch((error) => {
+      console.log(email, password)
       const errorCode = error.code;
       const errorMessage = error.message;
-
-      console.log(errorCode, errorMessage);
+      console.log('esto es un error code',errorCode,'este es el error mensaje', errorMessage);
       // ..
     });
 };
@@ -121,6 +124,9 @@ const LoginWithUser = () => {
 
   signInWithEmailAndPassword(auth, email, password).then((res) => {
     console.log(res.user);
+    nombreUsuario.value = res.user.email
+    formularioLogin.style.display = 'none';
+
   });
 };
 
