@@ -43,6 +43,7 @@
       <button id = 'login-w-user'>
         Crea tu usuario!
       </button>
+      <button id = 'iniciarSesionEmail'>Iniciar Sesión</button>
     </div>
 
     <div class="emailAndPassword" id = 'emailAndPassword'>
@@ -57,7 +58,22 @@
         <input type="password" id="userPass" />
 
       </form>
-      <button id = 'crearCuenta'>Loro</button>
+      <button id = 'crearCuenta'>Crear cuenta</button>
+    </div>
+
+    <div class="emailAndPasswordLogin" id = 'emailAndPasswordLogin'>
+      <form action="emailpass">
+        <label for="email">Digite su email</label>
+        <input
+          type="text"
+          id="userEmailLogin"
+          name="email"
+        />
+        <label for="inputPassword">Contraseña:</label>
+        <input type="password" id="userPassLogin" />
+
+      </form>
+      <button id = 'logearCuenta'>Logear cuenta</button>
     </div>
 
     <script src="script.js" type="module"></script>

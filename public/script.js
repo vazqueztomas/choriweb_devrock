@@ -62,6 +62,11 @@ const enviarMsj = d
 
 // User login facebook
 const login = d.getElementById("login");
+const btnLogEmail = d
+  .getElementById("logearCuenta")
+  .addEventListener("click", () => {
+    LoginWithUser();
+  });
 
 // boton de deslogueo
 const deslogBtn = d.getElementById("deslog").addEventListener("click", () => {
@@ -70,7 +75,14 @@ const deslogBtn = d.getElementById("deslog").addEventListener("click", () => {
 
 // userLogin con pass y email
 
-const formularioLogin = d.getElementById("emailAndPassword");
+const iniciarSesionBtn = d
+  .getElementById("iniciarSesionEmail")
+  .addEventListener("click", () => {
+    let formulario = (d.getElementById("emailAndPasswordLogin").style.display =
+      "block");
+  });
+
+// const formularioLogin = d.getElementById("emailAndPassword");
 const btnCrearCuenta = d
   .getElementById("crearCuenta")
   .addEventListener("click", () => {
@@ -80,41 +92,35 @@ const btnCrearCuenta = d
 const logWithUserBtn = d
   .getElementById("login-w-user")
   .addEventListener("click", () => {
-    formularioLogin.style.display = "block";
+    let formularioLogin = d.getElementById('emailAndPassword').style.display = 'block'
   });
 
 const createUser = () => {
   let password = d.getElementById("userPass").value;
   let email = d.getElementsByTagName("userEmail").value;
 
-createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed in
-    const user = userCredential.user;
-    console.log('logueado', user)
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      console.log("logueado", user);
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
 
-    console.log(errorCode, errorMessage)
-    // ..
-  });
+      console.log(errorCode, errorMessage);
+      // ..
+    });
 };
 
 const LoginWithUser = () => {
-  let password = d.getElementById("userPass").value;
-  let email = d.getElementById("userEmail").value;
+  let password = d.getElementById("userPassLogin").value;
+  let email = d.getElementById("userEmailLogin").value;
 
   signInWithEmailAndPassword(auth, email, password).then((res) => {
-    let logUser = {
-      uid: res.user.uid,
-      email: res.user.email,
-    };
-    nombreUsuario.value = logUser.email;
-    login.style.display = "none";
-    interact.style.display = "block";
+    console.log(res.user);
   });
 };
 
